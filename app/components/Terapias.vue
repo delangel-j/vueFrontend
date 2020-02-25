@@ -1,6 +1,6 @@
 <template>
     <Page class="page">
-        <ActionBar class="action-bar">
+        <ActionBar class="action-bar" backgroundColor="black">
             <!-- 
             Use the NavigationButton as a side-drawer button in Android
             because ActionItems are shown on the right side of the ActionBar
@@ -16,13 +16,21 @@
                 @tap="onDrawerButtonTap"
                 ios.position="left">
             </ActionItem>
-            <Label class="action-bar-title" text="Featured"></Label>
+            <Label class="action-bar-title" text="Terapias"></Label>
         </ActionBar>
 
-        <GridLayout class="page__content">
-            <Label class="page__content-icon fas" text.decode="&#xf005;"></Label>
-            <Label class="page__content-placeholder" :text="message"></Label>
-        </GridLayout>
+        <ScrollView >
+        <ListView for="terapia in terapias">
+            <v-template>
+                <FlexboxLayout flexDirection="row">
+                    <Image :src="terapia.img" class="thumb" width="50" height="50" />
+                    <Label :text="terapia.terapia" />
+                </FlexboxLayout>
+            </v-template>
+            </ListView>
+
+        </ScrollView>
+
     </Page>
 </template>
 
@@ -42,6 +50,28 @@
         methods: {
             onDrawerButtonTap() {
                 utils.showDrawer();
+            }
+        },
+        data() {
+            return {
+                terapias: [
+                    { 
+                        terapia: "Respiración y relajación",
+                        img: "~/images/respiracion.jpg"
+                    },
+                    {
+                        terapia: "Prefonatorios",
+                        img: "~/images/prefonatorios.jpg"
+                    },
+                    {
+                        terapia: "Praxias orofaciales",
+                        img: "~/images/praxias.jpg"
+                    },
+                    {
+                        terapia: "Ejercicios de fonemas",
+                        img: "~/images/fonemas.jpg"
+                    }
+                ]
             }
         }
     };

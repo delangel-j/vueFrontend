@@ -1,36 +1,36 @@
 <template lang="html">
 <GridLayout rows="auto, *" class="nt-drawer__content">
-            <StackLayout row="0" class="nt-drawer__header">
+            <StackLayout row="0" class="nt-drawer__header" backgroundColor="black">
                 <Image class="nt-drawer__header-image fas t-36" src.decode="font://&#xf2bd;"></Image>
-                <Label class="nt-drawer__header-brand" text="User Name"></Label>
-                <Label class="nt-drawer__header-footnote" text="username@mail.com"></Label>
+                <Label class="nt-drawer__header-brand" text="Francisco Santiago Morales Roa"></Label>
+                <Label class="nt-drawer__header-footnote" text="Exp: 16-59-09"></Label>
             </StackLayout>
         
             <ScrollView row="1" class="nt-drawer__body">
                 <StackLayout>
-                    <GridLayout columns="auto, *" :class="'nt-drawer__list-item' + (selectedPage === 'Home' ? ' -selected': '')" @tap="onNavigationItemTap(Home)">
+                    <GridLayout columns="auto, *" :class="'nt-drawer__list-item' + (selectedPage === 'ReporteDiagnosticos' ? ' -selected': '')" @tap="onNavigationItemTap(ReporteDiagnosticos)">
                         <Label col="0" text.decode="&#xf015;" class="nt-icon fas"></Label>
-                        <Label col="1" text="Home" class="p-r-10"></Label>
+                        <Label col="1" text="Reporte de diagnósticos" class="p-r-10"></Label>
                     </GridLayout>
 
-                    <GridLayout columns="auto, *" :class="'nt-drawer__list-item' + (selectedPage === 'Browse' ? ' -selected': '')" @tap="onNavigationItemTap(Browse)">
+                    <GridLayout columns="auto, *" :class="'nt-drawer__list-item' + (selectedPage === 'ReporteCitas' ? ' -selected': '')" @tap="onNavigationItemTap(ReporteCitas)">
                         <Label col="0" text.decode="&#xf1ea;" class="nt-icon far"></Label>
                         <Label col="1" text="Reporte de citas" class="p-r-10"></Label>
                     </GridLayout>
 
-                    <GridLayout columns="auto, *" :class="'nt-drawer__list-item' + (selectedPage === 'Search' ? ' -selected': '')" @tap="onNavigationItemTap(Search)">
+                    <GridLayout columns="auto, *" :class="'nt-drawer__list-item' + (selectedPage === 'Progreso' ? ' -selected': '')" @tap="onNavigationItemTap(Progreso)">
                         <Label col="0" text.decode="&#xf002;" class="nt-icon fas"></Label>
-                        <Label col="1" text="Search" class="p-r-10"></Label>
+                        <Label col="1" text="Progreso del paciente" class="p-r-10"></Label>
                     </GridLayout>
 
-                    <GridLayout columns="auto, *" :class="'nt-drawer__list-item' + (selectedPage === 'Featured' ? ' -selected': '')" @tap="onNavigationItemTap(Featured)">
+                    <GridLayout columns="auto, *" :class="'nt-drawer__list-item' + (selectedPage === 'Terapias' ? ' -selected': '')" @tap="onNavigationItemTap(Terapias)">
                         <Label col="0" text.decode="&#xf005;" class="nt-icon fas"></Label>
-                        <Label col="1" text="Featured" class="p-r-10"></Label>
+                        <Label col="1" text="Terapias" class="p-r-10"></Label>
                     </GridLayout>
         
                     <StackLayout class="hr"></StackLayout>
 
-                    <GridLayout columns="auto, *" :class="'nt-drawer__list-item' + (selectedPage === 'Settings' ? ' -selected': '')" @tap="onNavigationItemTap(Settings)">
+                    <GridLayout columns="auto, *" :class="'nt-drawer__list-item' + (selectedPage === 'Notificaciones' ? ' -selected': '')" @tap="onNavigationItemTap(Notificaciones)">
                         <Label col="0" text.decode="&#xf013;" class="nt-icon fas"></Label>
                         <Label col="1" text="Notificaciones" class="p-r-10"></Label>
                     </GridLayout>
@@ -40,11 +40,11 @@
 </template>
 
 <script>
-    import Home from "./Home";
-    import Browse from "./Browse";
-    import Featured from "./Featured";
-    import Search from "./Search";
-    import Settings from "./Settings";
+    import ReporteDiagnosticos from "./ReporteDiagnosticos";
+    import ReporteCitas from "./ReporteCitas";
+    import Terapias from "./Terapias";
+    import Progreso from "./Progreso";
+    import Notificaciones from "./Notificaciones";
     import * as utils from "~/shared/utils";
     import SelectedPageService from "~/shared/selected-page-service";    
     
@@ -55,20 +55,24 @@
         },
         data () {
             return {
-                Home: Home,
-                Browse: Browse,
-                Featured: Featured,
-                Search: Search,
-                Settings: Settings,
-                selectedPage: ""
+                ReporteDiagnosticos: ReporteDiagnosticos,
+                ReporteCitas: ReporteCitas,
+                Terapias: Terapias,
+                Progreso: Progreso,
+                Notificaciones: Notificaciones,
+                selectedPage: "",
+                usuarios: [
+                    { nombre: "Francisco Santiago Morales Roa",
+                     expediente: "1659-09"},
+                ],
             };
         },
         components: {
-            Home,
-            Browse,
-            Featured,
-            Search,
-            Settings
+            ReporteDiagnosticos,
+            ReporteCitas,
+            Terapias,
+            Progreso,
+            Notificaciones
         },
         methods: {
             onNavigationItemTap(component) {

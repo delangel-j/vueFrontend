@@ -16,30 +16,24 @@
                 @tap="onDrawerButtonTap"
                 ios.position="left">
             </ActionItem>
-           
-              <StackLayout>
-                <Label class="action-bar-title" text="Home"></Label>
-                <Image src="res://icon" width="40" height="40" verticalAlignment="center" />
-                <Label text="NativeScript" fontSize="24" verticalAlignment="center" />
-              </StackLayout>
+            <Label class="action-bar-title" text="Search"></Label>
         </ActionBar>
 
         <GridLayout class="page__content">
-            <Label class="page__content-icon fas" text.decode="&#xf015;"></Label>
-            <Label class="page__content-placeholder" :text="message"></Label>
-            
+   <Image src="~/images/respiracion.jpg"
+                            class="thumb img-circle" />
         </GridLayout>
-
     </Page>
 </template>
 
 <script>
     import * as utils from "~/shared/utils";
+        import * as calendarModule from 'nativescript-ui-calendar';
     import SelectedPageService from "../shared/selected-page-service";
 
     export default {
         mounted() {
-            SelectedPageService.getInstance().updateSelectedPage("Home");
+            SelectedPageService.getInstance().updateSelectedPage("Search");
         },
         computed: {
             message() {

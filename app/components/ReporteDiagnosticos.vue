@@ -1,6 +1,6 @@
 <template>
     <Page class="page">
-        <ActionBar class="action-bar">
+        <ActionBar class="action-bar" backgroundColor="black">
             <!-- 
             Use the NavigationButton as a side-drawer button in Android
             because ActionItems are shown on the right side of the ActionBar
@@ -16,25 +16,30 @@
                 @tap="onDrawerButtonTap"
                 ios.position="left">
             </ActionItem>
-            <Label class="action-bar-title" text="Search"></Label>
+           
+              <StackLayout>
+                <Label class="action-bar-title" text="Home"></Label>
+                <Image src="res://icon" width="40" height="40" verticalAlignment="center" />
+                <Label text="NativeScript" fontSize="24" verticalAlignment="center" />
+              </StackLayout>
         </ActionBar>
 
         <GridLayout class="page__content">
-            <Label class="page__content-icon fas" text.decode="&#xf002;"></Label>
+            <Label class="page__content-icon fas" text.decode="&#xf015;"></Label>
             <Label class="page__content-placeholder" :text="message"></Label>
-            <RadCalendar />
+            
         </GridLayout>
+
     </Page>
 </template>
 
 <script>
     import * as utils from "~/shared/utils";
-        import * as calendarModule from 'nativescript-ui-calendar';
     import SelectedPageService from "../shared/selected-page-service";
 
     export default {
         mounted() {
-            SelectedPageService.getInstance().updateSelectedPage("Search");
+            SelectedPageService.getInstance().updateSelectedPage("Home");
         },
         computed: {
             message() {
