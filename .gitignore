@@ -1,0 +1,30 @@
+# Jetbrains project files
+.idea
+
+# NPM
+node_modules
+
+#NativeScript application
+hooks
+platforms
+
+# Ignore Vue project
+.DS_Store
+/dist
+
+# Local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.vscode
+*.suo
+*.ntvs*
+*.njsprog
+*.sln
+*.sw?

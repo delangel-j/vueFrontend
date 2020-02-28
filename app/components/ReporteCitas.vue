@@ -20,32 +20,32 @@
         </ActionBar>
 
         
-    <TabView :selectedIndex="selectedIndex" @selectedIndexChange="indexChange">
+    <TabView  @selectedIndexChange="indexChange">
            <!-- Pestaña 1. -->
             <TabViewItem title="Progreso" iconSource="res://progreso">
          
-                <GridLayout rows="50,200,20,20" columns="20, *, 20">
-                  <Label row="0" col="1" text="Bloque 4" />
-                    <RadPieChart allowAnimation="true" row="1" col="1">
-                        <DonutSeries v-tkPieSeries selectionMode="DataPoint"
-                            expandRadius="0.4" outerRadiusFactor="0.7"
-                            innerRadiusFactor="0.4" :items="citas"
-                            valueProperty="Cantidad" legendLabel="Citas" />
-                        <RadLegendView v-tkPieLegend position="Right"
-                            title="Citas" offsetOrigin="TopRight" width="110"
-                            enableSelection="true" />
-                    </RadPieChart>
-<Label row="2" col="1" text="40%" textWrap="true"/>
-<Label row="3" col="1" colSpan="1" text="4/12" />
-
-
+                <GridLayout rows="30,30,200,20,20" columns="20, *, 20">
+                  <Label row="1" col="1" text="Bloque 4" />
+      
+  
+      <RadPieChart allowAnimation="true" row="2" col="1">
+        <DonutSeries v-tkPieSeries
+          selectionMode="DataPoint"
+          expandRadius="0.4"
+          outerRadiusFactor="0.7"
+          valueProperty="Cantidad"
+          legendLabel="Citas"
+          showLabels="true"
+          :items="citas" />
+        <RadLegendView v-tkPieLegend position="Right" title="Citas" offsetOrigin="TopRight" width="110" enableSelection="true"></RadLegendView>
+      </RadPieChart>
                     </GridLayout>
 
         </TabViewItem>
 
         <!--Pestaña 2. Calendario-->
         <TabViewItem title="Calendario">
-            <RadCalendar
+            <RadCalendar  id="calendar"
             :eventSource="calendarEvents" 
 
           eventsViewMode="Inline" 
@@ -66,7 +66,7 @@
             <ListView for="item in items">         
             <v-template>
         <!-- Shows the list item label in the default color and style. -->
-        <GridLayout columns="80,50,200,50" rows="20,20">
+        <GridLayout columns="80,50,200,50" rows="28,28">
             <Label  row="0" col="0" :text="item.fecha"  />
             <Label row="0" class="lista" col="1" :text="item.idExpediente" />
              <Label row="0" class="lista" col="2" :text="item.nombre" />
@@ -84,12 +84,13 @@
 </template>
 
 <script>
-
     import * as utils from "~/shared/utils";
     import SelectedPageService from "../shared/selected-page-service";
     import * as calendarModule from 'nativescript-ui-calendar';
     import { Color } from 'color';
+    import Vue from "nativescript-vue";
     import RadCartesianChart from "nativescript-ui-chart/vue";
+    Vue.use(RadCartesianChart);
 
 
     export default {
@@ -157,8 +158,8 @@
                   { fecha: "21/02/2020", idExpediente: "LTF18" , nombre: "José Carlos Huerta Gonzáles", horaInicio: "12:00", horaFin: "13:30" },
                   { fecha: "28/02/2020", idExpediente: "LTF18" , nombre: "José Carlos Huerta Gonzáles", horaInicio: "12:00", horaFin: "13:30" }
                   ],
-                  citas: [{
-                                Citas: "Citas de asistencia",
+              citas: [{
+                        Citas: "Citas de asistencia",
                                 Cantidad: 3
                             },
                             {
@@ -167,7 +168,7 @@
                             },
                             {
                                 Citas: "Citas restantes",
-                                Cantidad: 12
+                                Cantidad: 8
                             }
                         ]
 

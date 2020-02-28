@@ -20,35 +20,25 @@
         </ActionBar>
 <ScrollView orientation="vertical">
      <StackLayout orientation="vertical"> 
-        <GridLayout class="page__content" rows="80,30,80,30,80,30,80,30,80" columns="20,280, auto">
+        <GridLayout rows="30, 50,30, 50,30, 50,30, 50,30" columns="20,280, auto">
 
-            <Label textWrap="true" row="0" col="1" class="titulo" text="Terapias"> </Label>
-            <Switch class="sw" row="0" col="2" checked="false" backgroundColor="green" />
-              <Label text="Recibe notificaciones diarias para ver vídeos" row="0" col="1" rowSpan="2"> </Label>
+            <Label textWrap="true" row="1"  col="1" class="titulo" text="Terapias"> </Label>
+            <Switch row="1" col="2"  checked="false" backgroundColor="green"  />
+              <Label row="1" col="1" class="subtitulo" text="Recibe notificaciones diarias para ver vídeos" > </Label>
 
-            <Label textWrap="true" row="2" col="1" class="titulo" text="Progreso del paciente"> </Label>
-            <Switch class="sw" row="2" col="2" checked="false" backgroundColor="green" />
-              <Label text="Recibe notificaciones al recibir el avance" row="2" col="1" rowSpan="2"> </Label>
+            <Label textWrap="true" row="3" col="1" class="titulo" text="Progreso del paciente"> </Label>
+            <Switch row="3" col="2" checked="false" backgroundColor="green" />
+              <Label class="subtitulo" row="3" col="1" text="Recibe notificaciones al recibir el avance"> </Label>
 
-            <Label textWrap="true" row="4" col="1" class="titulo" text="Citas" > </Label>
-            <Switch class="sw" row="4" col="2" checked="false" backgroundColor="green" />
-            <Label text="Recibe más de una notificación" row="4" col="1" rowSpan="2"> </Label>
+            <Label textWrap="true" row="5" col="1" class="titulo" text="Citas" > </Label>
+            <Switch row="5" col="2" checked="false" backgroundColor="green" />
+            <Label  row="5" col="1" class="subtitulo" text="Recibe más de una notificación"> </Label>
 
 
-            <Label textWrap="true" row="6" col="1" class="titulo" text="Reportes de progreso"> </Label>
-            <Switch class="sw" row="6" col="2" checked="false" backgroundColor="green" />
-            <Label text="Recibe notificaciones al llegar el reporte" row="6" col="1" rowSpan="2"> </Label>
+            <Label textWrap="true" row="7" col="1" class="titulo" text="Reportes de progreso"> </Label>
+            <Switch row="7" col="2" checked="false" backgroundColor="green" />
+            <Label row="7" col="1" class="subtitulo"  text="Recibe notificaciones al llegar el reporte"> </Label>
 
-<!--
-            <Label textWrap="true" row="8" col="1" class="titulo" text="aa" backgroundColor="yellow"> </Label>
-            <Switch class="sw" row="8" col="2" checked="false" backgroundColor="red" />
-            
-            <Label textWrap="true" backroundColor="yellow" row="3" rowSpan="2" col="0" text="Recibe notificaciones diarias para ver vídeos" > </Label>
-          
-
- 
-           <Label class="page__content-placeholder" :text="message"></Label> -->
-            
         </GridLayout>
         </StackLayout>
         </ScrollView>
@@ -86,8 +76,8 @@
     .titulo {
         font-size: 20px;
     }
-    Switch {
-        align-items: right;
+    .subtitulo {
+        margin-top: 70px;
     }
 
     // Custom styles
