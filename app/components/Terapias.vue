@@ -56,14 +56,17 @@
             return {
                 terapias: [
                     { 
+                        idTerapia: 1,
                         terapia: "Respiración y relajación",
                         img: "~/images/respiracion.jpg"
                     },
                     {
+                        idTerapia: 2,
                         terapia: "Prefonatorios",
                         img: "~/images/prefonatorios.jpg"
                     },
                     {
+                        idTerapia: 3,
                         terapia: "Praxias orofaciales",
                         img: "~/images/praxias.jpg"
                     },

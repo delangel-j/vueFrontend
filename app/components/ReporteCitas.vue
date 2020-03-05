@@ -27,9 +27,9 @@
                 <GridLayout rows="30,30,200,20,20" columns="20, *, 20">
                   <Label row="1" col="1" text="Bloque 4" />
       
-  
+        <!--  Gráfica de dona -->
       <RadPieChart allowAnimation="true" row="2" col="1">
-        <DonutSeries v-tkPieSeries
+        <DonutSeries v-tkPieSeries seriesName="pie"
           selectionMode="DataPoint"
           expandRadius="0.4"
           outerRadiusFactor="0.7"
@@ -38,6 +38,14 @@
           showLabels="true"
           :items="citas" />
         <RadLegendView v-tkPieLegend position="Right" title="Citas" offsetOrigin="TopRight" width="110" enableSelection="true"></RadLegendView>
+    
+        <Palette v-tkPiePalette seriesName="pie">
+          <PaletteEntry tkPiePaletteEntry fillColor="green" strokeColor="green"></PaletteEntry>
+           <PaletteEntry tkPiePaletteEntry fillColor="orange" strokeColor="orange"></PaletteEntry>
+            <PaletteEntry tkPiePaletteEntry fillColor="gray" strokeColor="gray"></PaletteEntry>
+      </Palette> 
+
+
       </RadPieChart>
                     </GridLayout>
 
@@ -193,19 +201,6 @@ TabView{
     color: white;
     background-color: #48A1CA;
     font-size: 14px;
-}
-.progressbar {
-    height: 50;
-    margin: 10;
-    border-radius: 10;
-    border-color: black;
-    border-width: 1;
-}
-.progressbar-value {
-    background: #337ab7;
-}
-.progressbar-negative-value{
-  background: red;
 }
     // Custom styles
 </style>
