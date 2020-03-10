@@ -6,7 +6,7 @@
 
 #NativeScript application
 hooks
-platforms
+#platforms
 
 # Ignore Vue project
 .DS_Store
